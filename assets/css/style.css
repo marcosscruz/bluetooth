@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0082FC;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+h2,
+h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+nav {
+    text-align: center;
+    /* Centraliza o conteúdo dentro da navegação */
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    /* Remove os marcadores da lista */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    /* Itens em linha */
+}
+
+nav ul li a {
+    display: inline-block;
+    background-color: #0072bb;
+    /* Cor de fundo do botão */
+    color: white;
+    /* Cor do texto */
+    padding: 10px 20px;
+    /* Tamanho do botão */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    border-radius: 5px;
+    /* Arredondamento do botão */
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidade */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Animação suave no hover */
+}
+
+nav ul li a:hover {
+    background-color: #005fa3;
+    /* Cor de fundo no hover */
+    transform: translateY(-2px);
+    /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra mais intensa no hover */
+}
+
+
+footer {
+    background-color: #0082FC;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
