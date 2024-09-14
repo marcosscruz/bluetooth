@@ -72,7 +72,7 @@ nav ul li {
 
 nav ul li a {
     display: inline-block;
-    background-color: #0072bb;
+    background-color: #4aa7ff;
     /* Cor de fundo do botão */
     color: white;
     /* Cor do texto */
@@ -99,6 +99,21 @@ nav ul li a:hover {
     /* Sombra mais intensa no hover */
 }
 
+header nav img {
+    width: 50px;
+    /* Tamanho da imagem */
+    height: 50px;
+    margin-left: 15px;
+    /* Espaçamento à esquerda da imagem */
+    transition: transform 0.3s ease;
+    /* Animação suave para hover */
+    color: white;
+}
+
+header nav img:hover {
+    transform: scale(1.1);
+    /* Aumenta ligeiramente a imagem no hover */
+}
 
 footer {
     background-color: #0082FC;
