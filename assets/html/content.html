@@ -13,10 +13,12 @@
 
     <header class="header-fixo">
         <h1 id="bluetooth-content">Bluetooth</h1>
-        <nav>
-            <img src="/assets/img/bluetooth-svgrepo-com.png" alt="symbol-bluetooth">
+        <nav class="nav-menu">
+            <img class="symbol-bluetooth" src="/assets/img/bluetooth-svgrepo-com.png" alt="symbol-bluetooth">
         </nav>
     </header>
+
+    <div id="overlay"></div>
 
     <main>
         <section id="funcionamento">
@@ -29,7 +31,9 @@
                 <img src="/assets/img/bluetooth_protocol.svg" alt="protocolo bluetooth">
                 <figcaption>Figura 1: Versão 802.15 da arquitetura de protocolos do Bluetooth.</figcaption>
             </figure>
+        </section>
 
+        <section id="camadas-funcionamento">
             <h2>Camadas e Funcionamento</h2>
             <ul>
                 <ol>
@@ -74,12 +78,11 @@
                         dos detalhes da transmissão, oferecendo serviços de multiplexação, segmentação, e reassemblagem
                         de pacotes, além de controlar o fluxo de dados. Ele atua como uma ponte entre as camadas de
                         banda base e os protocolos de nível superior.
-                    </li>
                     <li>
-                        <b>Camada Middleware:</b> Contém protocolos como o RFCOMM (que emula portas seriais para
-                        conectar dispositivos antigos), o protocolo de descoberta de serviços (que identifica serviços
-                        disponíveis na rede), e o protocolo de telefonia, utilizado para comunicação de voz em tempo
-                        real.
+                        <b>Camada Middleware:</b> Contém protocolos como o <b>RFCOMM</b> (que emula portas seriais para
+                        conectar dispositivos antigos), o <b>protocolo de descoberta de serviços</b> (que identifica
+                        serviços disponíveis na rede), e o <b>protocolo de telefonia</b>, utilizado para comunicação de
+                        voz em tempo real.
                     </li>
                     <li>
                         <b>Camada de Aplicação:</b> As aplicações Bluetooth utilizam perfis específicos que determinam
@@ -89,22 +92,6 @@
                     </li>
                 </ol>
             </ul>
-
-            <h2>Arquitetura</h2>
-            <p>
-                O sistema Bluetooth é estruturado em piconets, que consistem em um nó mestre e até sete nós escravos
-                ativos dentro de um raio de 10 metros. Várias piconets podem coexistir e ser interconectadas por um nó
-                de ponte, formando uma scatternet. Além dos nós ativos, uma piconet pode ter até 255 nós estacionados,
-                que são dispositivos inativos colocados em estado de baixa energia pelo mestre para economizar bateria.
-                A estrutura mestre/escravo foi projetada para facilitar a produção de chips Bluetooth baratos, com os
-                escravos sendo dispositivos simples que seguem as instruções do mestre. A comunicação é controlada pelo
-                mestre, que define o momento e o dispositivo que se comunica em cada slot de tempo. Não há comunicação
-                direta entre escravos, apenas entre o mestre e os escravos.
-            </p>
-            <figure>
-                <img src="/assets/img/arquitetura.JPG" alt="arquitetura bluetooth">
-                <figcaption>Figura 2: Duas piconets podem ser conectadas para formar uma scatternet.</figcaption>
-            </figure>
         </section>
 
         <section id="meio-fisico">
@@ -133,12 +120,69 @@
         </section>
 
         <section id="padronizacao">
+            <h2>Padronização IEEE e Compatibilidade</h2>
             <p>
                 O Bluetooth é padronizado pelo comitê <b>IEEE 802.15</b>, que se concentra em redes de área pessoal sem
-                fio (WPAN). A versão mais utilizada do Bluetooth (versão 802.15.1) foi desenvolvida especificamente para
+                fio
+                (WPAN). A versão mais utilizada do Bluetooth (versão 802.15.1) foi desenvolvida especificamente para
                 dispositivos de baixo consumo de energia que precisam de comunicação em curtas distâncias.
             </p>
+            <ul>
+                <li>
+                    <b>Compatibilidade com o Padrão IEEE 802.11 (Wi-Fi):</b> A convivência entre Bluetooth e Wi-Fi na
+                    banda de 2,4 GHz é um desafio contínuo. Embora ambas as tecnologias compartilhem a mesma faixa, o
+                    IEEE está trabalhando para adaptar o Bluetooth ao modelo 802 de forma que haja menor interferência
+                    com o Wi-Fi, principalmente em ambientes onde os dois sistemas operam simultaneamente.
+                </li>
+            </ul>
         </section>
+
+        <section id="caracteristicas">
+            <h2>Características</h2>
+            <p>
+                O Bluetooth, uma tecnologia de comunicação sem fio, é frequentemente usado para ligar aparelhos a uma
+                distância curta. Desde que foi introduzido, o Bluetooth passou por uma evolução notável, proporcionando
+                aprimoramentos constantes em desempenho, eficiência e funcionalidade. Com o progresso das versões, como
+                o Bluetooth 5.0 e as seguintes, o padrão incorporou funcionalidades avançadas para atender às
+                necessidades crescentes de conectividade em um mundo cada vez mais interligado. Nesta parte, vamos
+                analisar as características fundamentais do Bluetooth, incluindo suas habilidades técnicas, melhorias
+                nas versões mais recentes e o impacto dessas inovações na experiência do usuário e na compatibilidade
+                com uma vasta variedade de aparelhos.
+            </p>
+            <h3>Largura de Banda</h3>
+            <p>
+                A largura de banda no Bluetooth varia conforme a versão da tecnologia, sendo que cada versão trouxe
+                aprimoramentos para aumentar a eficiência do uso do espectro de frequência. O Bluetooth 5.0 é um
+                progresso notável nos padrões de conexão sem fio de curta distância, trazendo aprimoramentos específicos
+                para usos na Internet das Coisas (IoT). As versões seguintes, Bluetooth 5.1, 5.2, 5.3 e 5.4,
+                proporcionam melhorias em vários campos, tais como velocidade de transmissão de dados, eficiência
+                energética, codificadores de áudio, serviços de localização, segurança e estabilidade da conexão. <br />
+                <br />Essas inovações tecnológicas auxiliam na redução do uso de energia em aparelhos portáteis,
+                melhoram o desempenho de aparelhos de áudio sem fio e permitem o rastreamento de objetos por meio de
+                beacons, entre outras vantagens. Em seguida, vamos detalhar as especificações do Bluetooth 5.0 e
+                suas atualizações posteriores, além das diferenças entre elas.
+            </p>
+        </section>
+
+        <section id="arquitetura">
+            <h2>Arquitetura</h2>
+            <p>
+                O sistema Bluetooth é estruturado em piconets, que consistem em um nó mestre e até sete nós escravos
+                ativos dentro de um raio de 10 metros. Várias piconets podem coexistir e ser interconectadas por um nó
+                de ponte, formando uma scatternet. Além dos nós ativos, uma piconet pode ter até 255 nós estacionados,
+                que são dispositivos inativos colocados em estado de baixa energia pelo mestre para economizar bateria.
+                A estrutura mestre/escravo foi projetada para facilitar a produção de chips Bluetooth baratos, com os
+                escravos sendo dispositivos simples que seguem as instruções do mestre. A comunicação é controlada pelo
+                mestre, que define o momento e o dispositivo que se comunica em cada slot de tempo. Não há comunicação
+                direta entre escravos, apenas entre o mestre e os escravos.
+            </p>
+            <figure>
+                <img src="/assets/img/arquitetura.JPG" alt="arquitetura bluetooth">
+                <figcaption>Figura 2: Duas piconets podem ser conectadas para formar uma scatternet.</figcaption>
+            </figure>
+        </section>
+
+
 
         <section id="historico">
             <h2>Histórico e evolução</h2>
@@ -147,6 +191,7 @@
                 Noruega no século 10. A versão 1.0 do Bluetooth foi lçançada em 1998 e desde então a tecnologia tem
                 evoluído para incluir novas funcionalidades e melhorias de desempenho.</p>
         </section>
+
         <section id="caracteristicas">
             <h2>Características</h2>
             <ul>
@@ -157,12 +202,14 @@
                 <li>Consumo de energia: baixo consumo de energia para prolongar a vida útil das baterias</li>
             </ul>
         </section>
+
         <section id="tecnologia-atual">
             <h2>Tecnologia mais atual</h2>
             <p>A tecnologia Bluetooth mais atual é o Bluetooth 5.0, que foi lançada em 2016. Ela oferece melhorias
                 significativas em relação às versões anteriores, incluindo uma maior largura de banda, uma maior taxa de
                 transmissão e uma maior extensão de funcionamento.</p>
         </section>
+
         <section id="vantagens-desvantagens">
             <h2>Vantagens e desvantagens em relação à outros tipos de meios físicos</h2>
             <h3>Vantagens:</h3>
@@ -179,12 +226,14 @@
                 <li>Segurança pode ser um problema se não for implementada corretamente</li>
             </ul>
         </section>
+
         <section id="dispositivos-necessarios">
             <h2>Quais dispositivos são necessários para funcionamento dessa tecnologia?</h2>
             <p>Para que a tecnologia Bluetooth funcione, são necessários dois dispositivos: um dispositivo mestre (como
                 um smartphone ou um computador) e um dispositivo escravo (como um fone de ouvido ou um dispositivo de
                 armazenamento).</p>
         </section>
+
         <section id="aplicacoes">
             <h2>Principais aplicações</h2>
             <ul>
@@ -194,6 +243,7 @@
                 <li>Controle de dispositivos remotos</li>
             </ul>
         </section>
+
         <section id="exemplo-pratico">
             <h2>Exemplo prático de uso</h2>
             <p>Um exemplo prático de uso da tecnologia Bluetooth é a conexão de um fone de ouvido sem fio a um
@@ -202,7 +252,7 @@
 
         <section id="referencias" class="referencias">
             <h2>Referências</h2>
-            <ul>
+            <ul id="referencias-ul">
                 <li>
                     <a href="https://www.pearson.com/en-us/subject-catalog/p/computer-networks/P200000003188/9780137523214"
                         target="_blank">COMPUTER NETWORK, 6th edition, by Andrew Tanenbaum, published by Pearson
@@ -216,6 +266,9 @@
         </section>
 
     </main>
+
+    <script src="/assets/js/script.js"></script>
+
     <footer>
         <p>&copy; 2024 - Tecnologia Bluetooth</p>
     </footer>
