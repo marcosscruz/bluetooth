@@ -11,28 +11,135 @@
 
 <body>
 
-    <header>
-        <h1>Bluetooth</h1>
+    <header class="header-fixo">
+        <h1 id="bluetooth-content">Bluetooth</h1>
         <nav>
-            <img src="/assets/img/bluetooth-svgrepo-com.png" alt="">
+            <img src="/assets/img/bluetooth-svgrepo-com.png" alt="symbol-bluetooth">
         </nav>
     </header>
 
     <main>
         <section id="funcionamento">
-            <h2>Descrição detalhada do funcionamento da tecnologia</h2>
-            <p>A tecnologia Bluetooth é uma tecnologia de comunicação sem fio que permite a transferência de dados entre
-                dispositivos próximos. Ela funciona em uma frequência de 2,4 GHz e utiliza um protocolo de comunicação
-                de rádio frequência (RF) para estabelecer conexões entre dispositivos. O Bluetooth utiliza um sistema de
-                chaveamento de frequência (Frequency Hopping Spread Spectrum) para minimizar interferências e garantir a
-                segurança das transmissões.</p>
+            <h2>Bluetooth</h2>
+            <p>Bluetooth é uma tecnologia de comunicação sem fio projetada para a troca de dados entre dispositivos em
+                curtas distâncias, usando frequências de rádio na banda <b>ISM</b> de <b>2,4 GHz</b>. A arquitetura do
+                Bluetooth não segue rígidamente modelos de rede tradicionais, como OSI ou TCP/IP, mas possui sua própria
+                estrutura de camadas de protocolo.</p>
+            <figure>
+                <img src="/assets/img/bluetooth_protocol.svg" alt="protocolo bluetooth">
+                <figcaption>Figura 1: Versão 802.15 da arquitetura de protocolos do Bluetooth.</figcaption>
+            </figure>
+
+            <h2>Camadas e Funcionamento</h2>
+            <ul>
+                <ol>
+                    <li>
+                        <b>Camada Física (Rádio):</b> A camada física é responsável pela modulação e transmissão de
+                        sinais de rádio entre dispositivos. O Bluetooth opera utilizando modulação por chaveamento por
+                        deslocamento de frequência (FSK) com 1 bit por Hz, fornecendo uma taxa bruta de dados de 1 Mbps,
+                        embora a taxa real de dados seja menor devido ao overhead de controle. O sistema utiliza a
+                        técnica de <i>spread spectrum</i> com saltos de frequência (FHSS), que realiza 1600 saltos por
+                        segundo
+                        entre 79 canais de 1 MHz, ajudando a evitar interferências e a garantir uma comunicação robusta
+                        em ambientes ruidosos.
+                    </li>
+                    <li>
+                        <b>Camada de Banda Base:</b> Equivalente à subcamada MAC de outros sistemas de comunicação, a
+                        banda base transforma o fluxo de bits em quadros e organiza a comunicação entre mestre e escravo
+                        por meio de slots de tempo de 625 microsegundos. O mestre usa slots pares para transmitir,
+                        enquanto os escravos usam slots ímpares. Essa multiplexação por divisão de tempo (TDM) permite
+                        que vários dispositivos compartilhem o mesmo canal de comunicação.
+                        Existem dois tipos principais de enlaces:
+                        <ul>
+                            <li>
+                                <b>ACL (Asynchronous Connection-Less):</b> Usado para a transmissão de dados comutados
+                                por pacotes, sem garantia de entrega. Se houver perda de quadros, os pacotes podem ser
+                                retransmitidos.
+                            </li>
+                            <li>
+                                <b>SCO (Synchronous Connection-Oriented):</b> Usado para dados em tempo real, como
+                                transmissões de áudio. A alocação de slots é fixa, e os pacotes não são retransmitidos
+                                para manter a baixa latência, utilizando técnicas de correção de erros antecipada.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Gerenciamento de Enlaces (Link Manager):</b> Esta camada lida com a configuração e o
+                        gerenciamento dos enlaces, como controle de potência, autenticação, criptografia, e negociação
+                        de parâmetros de conexão. Também é responsável pela manutenção de piconets, redes pequenas onde
+                        um dispositivo age como mestre e outros como escravos.
+                    </li>
+                    <li>
+                        <b>L2CAP (Logical Link Control and Adaptation Protocol):</b> O L2CAP isola as camadas superiores
+                        dos detalhes da transmissão, oferecendo serviços de multiplexação, segmentação, e reassemblagem
+                        de pacotes, além de controlar o fluxo de dados. Ele atua como uma ponte entre as camadas de
+                        banda base e os protocolos de nível superior.
+                    </li>
+                    <li>
+                        <b>Camada Middleware:</b> Contém protocolos como o RFCOMM (que emula portas seriais para
+                        conectar dispositivos antigos), o protocolo de descoberta de serviços (que identifica serviços
+                        disponíveis na rede), e o protocolo de telefonia, utilizado para comunicação de voz em tempo
+                        real.
+                    </li>
+                    <li>
+                        <b>Camada de Aplicação:</b> As aplicações Bluetooth utilizam perfis específicos que determinam
+                        os protocolos e configurações necessários para cada função, como transferência de arquivos,
+                        fones de ouvido sem fio, sincronização de dispositivos, e muito mais. Cada dispositivo contém
+                        apenas os protocolos necessários para sua funcionalidade, tornando o sistema mais eficiente.
+                    </li>
+                </ol>
+            </ul>
+
+            <h2>Arquitetura</h2>
+            <p>
+                O sistema Bluetooth é estruturado em piconets, que consistem em um nó mestre e até sete nós escravos
+                ativos dentro de um raio de 10 metros. Várias piconets podem coexistir e ser interconectadas por um nó
+                de ponte, formando uma scatternet. Além dos nós ativos, uma piconet pode ter até 255 nós estacionados,
+                que são dispositivos inativos colocados em estado de baixa energia pelo mestre para economizar bateria.
+                A estrutura mestre/escravo foi projetada para facilitar a produção de chips Bluetooth baratos, com os
+                escravos sendo dispositivos simples que seguem as instruções do mestre. A comunicação é controlada pelo
+                mestre, que define o momento e o dispositivo que se comunica em cada slot de tempo. Não há comunicação
+                direta entre escravos, apenas entre o mestre e os escravos.
+            </p>
+            <figure>
+                <img src="/assets/img/arquitetura.JPG" alt="arquitetura bluetooth">
+                <figcaption>Figura 2: Duas piconets podem ser conectadas para formar uma scatternet.</figcaption>
+            </figure>
         </section>
+
+        <section id="meio-fisico">
+            <h2>Meio Físico</h2>
+            <p>
+                Bluetooth opera na faixa de rádio <b>ISM (Industrial, Scientific, and Medical)</b> de <b>2,4 GHz</b>, a
+                mesma utilizada por dispositivos Wi-Fi, micro-ondas e outras tecnologias sem fio. O uso dessa banda
+                ocorre porque ela não requer licenciamento em muitas partes do mundo, tornando o Bluetooth uma
+                tecnologia acessível e econômica.
+            </p>
+            <ul>
+                <li>
+                    <b>Canais de Comunicação:</b> A banda de 2,4 GHz é dividida em <b>79 canais</b>, cada um com largura
+                    de 1 MHz. O Bluetooth utiliza a técnica de <b>salto de frequência (FHSS)</b>, mudando rapidamente
+                    entre os canais para evitar interferências e maximizar a eficiência do espectro. Com <b>1600
+                        hops/s</b>, todos os dispositivos dentro de uma piconet (rede controlada por um mestre) saltam
+                    simultaneamente entre os mesmos canais sob a coordenação do dispositivo mestre.
+                </li>
+                <li>
+                    <b>Interferência e Conflito com Wi-Fi:</b> Como tanto o Bluetooth quanto o Wi-Fi operam na mesma
+                    faixa de 2,4 GHz, eles frequentemente interferem entre si. O Bluetooth salta de frequência mais
+                    rapidamente do que o Wi-Fi, o que pode causar mais interrupções nas transmissões de Wi-Fi. Essa
+                    sobreposição de frequências tem levado a esforços por parte do IEEE para harmonizar os dois padrões.
+                </li>
+            </ul>
+        </section>
+
         <section id="padronizacao">
-            <h2>Detalhamento do meio físico e padronização IEEE</h2>
-            <p>O meio físico do Bluetooth é baseado em uma tecnologia de rádio frequência (RF) que opera em uma faixa de
-                frequência de 2,4 GHz. A padronização do Bluetooth é feita pela IEEE (Institute of Electrical and
-                Electronics Engineers) e é definida pelo padrão IEEE 802.15.1.</p>
+            <p>
+                O Bluetooth é padronizado pelo comitê <b>IEEE 802.15</b>, que se concentra em redes de área pessoal sem
+                fio (WPAN). A versão mais utilizada do Bluetooth (versão 802.15.1) foi desenvolvida especificamente para
+                dispositivos de baixo consumo de energia que precisam de comunicação em curtas distâncias.
+            </p>
         </section>
+
         <section id="historico">
             <h2>Histórico e evolução</h2>
             <p>A tecnologia Bluetooth foi desenvolvida pela primeira vez em 1994 por uma equipe de engenheiros da Intel.
@@ -92,6 +199,22 @@
             <p>Um exemplo prático de uso da tecnologia Bluetooth é a conexão de um fone de ouvido sem fio a um
                 smartphone. Isso permite que o usuário ouça música ou faça chamadas sem a necessidade de um cabo.</p>
         </section>
+
+        <section id="referencias" class="referencias">
+            <h2>Referências</h2>
+            <ul>
+                <li>
+                    <a href="https://www.pearson.com/en-us/subject-catalog/p/computer-networks/P200000003188/9780137523214"
+                        target="_blank">COMPUTER NETWORK, 6th edition, by Andrew Tanenbaum, published by Pearson
+                        Education, Inc., publishing as Pearson, Copyright ©2021.</a>
+                </li>
+                <li>
+                    <a href="https://www.bluetooth.com/learn-about-bluetooth/" target="_blank">BLUETOOTH. Introducing
+                        Bluetooth® Channel Sounding, 2024. Learn About Bluetooth.</a>
+                </li>
+            </ul>
+        </section>
+
     </main>
     <footer>
         <p>&copy; 2024 - Tecnologia Bluetooth</p>
