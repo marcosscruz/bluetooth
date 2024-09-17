@@ -14,6 +14,8 @@ header {
 }
 
 button {
+    margin-top: 9px;
+    font-family: "Merriweather", system-ui;
     background-color: #5bc0de;
     cursor: pointer;
     color: white;
@@ -21,7 +23,6 @@ button {
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    font-family: Arial, sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -62,13 +63,26 @@ section {
 
 p,
 a {
+    font-family: "Merriweather", system-ui;
     text-align: justify;
     line-height: 1.6;
 }
 
 h1 {
+    font-size: 40px;
+    font-family: "Lato", sans-serif;
     color: #ffffff;
     margin-bottom: 10px;
+}
+
+h2 {
+    font-family: "Lato", sans-serif;
+    font-size: 30px;
+}
+
+h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
 }
 
 h2,
@@ -237,15 +251,47 @@ footer p {
 
 .integrantes,
 .professor {
-    font-size: 15px;
+    font-size: 14px;
     color: #555;
     margin-bottom: 0;
-    text-align: left;
+    margin-left: 1px;
     width: 100%;
     max-width: 600px;
 }
 
 .integrantes strong,
 .professor strong {
+    color: #0082FC;
+}
+
+section .mw {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mW {
+    margin-left: 35px;
+    background-color: transparent;
+    border: 1px solid #0082FC;
+    padding: 20px;
+    width: 850px;
+    box-shadow: 0 0 10px rgba(0, 130, 252, 0.5);
+}
+
+.title {
+    color: #0082FC;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content {
+    color: #000000;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.content strong {
+    font-weight: bold;
     color: #0082FC;
 }
