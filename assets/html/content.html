@@ -165,6 +165,152 @@
                 beacons, entre outras vantagens. Em seguida, vamos detalhar as especificações do Bluetooth 5.0 e
                 suas atualizações posteriores, além das diferenças entre elas.
             </p>
+            <ul>
+                <li>
+                    O Bluetooth opera na banda ISM de 2,4 GHz (Industrial, Scientific, and Medical), utilizando saltos
+                    de frequência (Frequency Hopping Spread Spectrum, FHSS) para minimizar interferências.
+                </li>
+                <li>
+                    A largura de banda para cada canal Bluetooth é de 1 MHz
+                </li>
+            </ul>
+            <p>
+                O Bluetooth 1.0 e 1.2 operam com largura de banda mais limitada, enquanto o Bluetooth 5.0+ permite um
+                alcance maior e comunicação de alta velocidade com eficiência no uso da banda de 2,4 GHz.
+            </p>
+
+            <h3>Taxa de Transferência</h3>
+            <p>
+                A taxa de transferência de dados do Bluetooth depende de vários fatores, incluindo a versão do Bluetooth
+                usada, a distância entre os dois dispositivos e a presença de quaisquer obstáculos ou interferências.
+                Existem várias versões do Bluetooth, cada uma com sua própria taxa de dados.
+
+                <br /><br />A primeira versão do Bluetooth, Bluetooth 1.0, tinha uma taxa de dados de apenas 1 Mbps. No
+                entanto, com cada versão subsequente, a taxa de transferência de dados aumentou significativamente. O
+                Bluetooth 2.0+EDR introduziu o <b>Enhanced Data Rate (EDR)</b>, que aumentou a taxa de dados para 3
+                Mbps. O Bluetooth 3.0+HS (High Speed) aumentou ainda mais a taxa de dados para 24 Mbps. Finalmente, o
+                Bluetooth 4.0 introduziu o Bluetooth Low Energy (BLE), que oferece uma taxa de dados de até 1 Mbps.
+                <br /><br />Bluetooth 5.0 oferece uma taxa de dados máxima teórica de 2 Mbps. No entanto, a taxa de
+                dados real provavelmente será menor devido a fatores como distância e interferência.
+            </p>
+
+            <h3>Extensão de Funcionamento</h3>
+            <p>
+                O Bluetooth é divido em quatro classes que variam conforme a potência máxima e distância alcançada. São
+                elas:
+            </p>
+            <ul>
+                <li>
+                    <b>Classe 1:</b> a transmissão tem alcance de até 100 metros e potência máxima de 100 mW. Headsets e
+                    smartwatches estão entre os dispositivos que se comunicam nesta classe;
+                </li>
+                <li>
+                    <b>Classe 2:</b> tem alcance de até 10 metros e potência de 2,5 mW. É adequado para dispositivos que
+                    não precisam de alcance amplo, como determinados fones de ouvido e caixas de som. É a classe mais
+                    comum;
+                </li>
+                <li>
+                    <b>Classe 3:</b> tipicamente, alcança 1 metro e tem potência de 1 mW, sendo adequado para
+                    dispositivos com baixo consumo de energia, como fones de ouvido simples;
+                </li>
+                <li>
+                    <b>Classe 4:</b> com alcance de apenas meio metro e potência de 0,5 mW, é uma classe pouco usada por
+                    necessitar que os dispositivos envolvidos estejam muito próximos entre si.
+                </li>
+            </ul>
+            <div class="mW">
+                <div class="title">O que é mW?</div>
+                <div class="content">
+                    A potência do Bluetooth é representada pela sigla <strong>mW</strong>, que significa
+                    <strong>miliwatt</strong>, e corresponde a um watt dividido por mil. Não confundir com
+                    <strong>MW</strong> (com ‘M’ maiúsculo), que é a sigla para megawatt.
+                </div>
+            </div>
+
+            <h3>Número de Usuários Suportados</h3>
+            <p>
+                Por meio do Bluetooth 5, uma única conexão Bluetooth primária pode conectar até sete dispositivos
+                Bluetooth diferentes simultaneamente. A conexão simultaneamente é possível,
+                mas apenas um pode ser usado ativamente por vez. Isso ocorre devido aos três modos de operação do
+                Bluetooth: <b>conexão</b>, <b>pareamento</b> e <b>atividade</b>. Um dispositivo pode estar pareado, mas
+                inativo ou
+                desconectado. <br /><br />Compartilhar arquivos e documentos é um dos principais usos para múltiplas
+                conexões. Nesse caso, um dos dispositivos atua como host, e os demais se conectam a ele, criando uma
+                rede Bluetooth que permite a troca de dados entre os dispositivos conectados. <br /><br /> No Android,
+                conexões Bluetooth permitem a ligação simultânea de múltiplos dispositivos a um único telefone. O
+                Android 10 suporta até quatro dispositivos pareados e permite alternar entre eles de forma automática
+                durante chamadas, ajustando o áudio para o dispositivo ou alto-falante Bluetooth adequado. O sistema
+                também salva as configurações de volume para cada dispositivo. Com Bluetooth 5, até sete dispositivos
+                podem ser conectados, embora esse número possa variar conforme o fabricante. É possível aumentar o
+                número de conexões ativando uma opção no modo Desenvolvedor. <br /><br /> No iPhone, até sete
+                dispositivos Bluetooth podem ser conectados simultaneamente, porém apenas três ou quatro podem ser
+                usados ao mesmo tempo. O áudio por Bluetooth é limitado a um único dispositivo.
+                <br /><br /> Em PCs e laptops, o número máximo de dispositivos Bluetooth conectados é sete, embora possa
+                ser limitado a três ou quatro, dependendo do fabricante. Os dispositivos Bluetooth mais comuns
+                conectados incluem periféricos como mouses, teclados, impressoras, alto-falantes e celulares. O mesmo
+                limite de conexões se aplica a sistemas Windows 10, amplamente utilizado em laptops e computadores.
+            </p>
+
+            <h3>Perfis Bluetooth</h3>
+            <p>
+                Perfis Bluetooth são protocolos que definem como uma conexão deve ser usada em determinada aplicação.
+                Cada perfil estabelece padrões técnicos que devem ser seguidos pela indústria para assegurar a
+                eficiência da comunicação e a compatibilidade entre dispositivos. Os perfis de controle de mídia são os
+                mais comuns.
+            </p>
+
+            <ul>
+                <li>
+                    <b>A2DP (Perfil Avançado de Distribuição de Áudio):</b> perfil Bluetooth que define como um fluxo de
+                    áudio deve ser transmitido, a exemplo de um celular que reproduz música em fones de ouvido sem fio.
+                    Pode funcionar com codecs de áudio Bluetooth;
+                </li>
+                <li>
+                    <b>VDP (Perfil de Distribuição de Vídeo):</b> perfil Bluetooth próprio para transmissões de vídeo a
+                    partir de uma fonte para o receptor, podendo ser usado para reproduzir filmes na TV a partir de uma
+                    central de mídia, por exemplo;
+                </li>
+                <li>
+                    <b>AVRCP (Perfil de Controle Remoto de Áudio e Vídeo):</b> perfil Bluetooth que permite o uso da
+                    tecnologia para controle remoto de equipamentos de som e vídeo, podendo ser usado em conjunto com os
+                    perfis A2DP e VDP;
+                </li>
+                <li>
+                    <b>HFP (Perfil de Mãos Livres):</b> perfil que faz o Bluetooth ser ativado para chamadas sem o uso
+                    das mãos, a exemplo do painel de um carro que se comunica com o celular. Faz parte dos perfis de
+                    controle de sistemas de comunicações;
+                </li>
+                <li>
+                    <b>GOEP (Perfil de Troca de Objetos Genéricos):</b> perfil Bluetooth próprio para troca de dados
+                    específicos entre os dispositivos, a exemplo da transferência de arquivos entre um notebook e um
+                    celular;
+                </li>
+                <li>
+                    <b>Sync:</b> é um perfil Bluetooth para sincronização de dados entre um dispositivo principal e
+                    aparelhos secundários, como celulares que se conectam a um computador para receber informações
+                    específicas. Pode ser usado junto com o GOEP.
+                </li>
+            </ul>
+
+            <figure>
+                <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/bluetoothprofile.png"
+                    alt="Perfis Bluetooth">
+                <figcaption>Figura X: Perfis Bluetooth.</figcaption>
+            </figure>
+
+            <h3>Segurança</h3>
+            <p>
+                O Bluetooth é uma tecnologia segura, de modo geral, mas não é possível garantir que ela esteja 100%
+                livre de problemas de segurança. Uma conexão Bluetooth pode ser usada para ações como o
+                <b>bluesnarfing</b>,
+                que é o roubo de dados de um dispositivo, e o <b>bluejacking</b>, que é o envio de mensagens com links
+                perigosos a um aparelho. <br /><br />Esses problemas não são comuns. Apesar disso, é recomendável adotar
+                alguns cuidados para reforçar a segurança do Bluetooth, como não se conectar a dispositivos que não
+                sejam seus, manter atualizado o sistema operacional de computadores, celulares e tablets, e excluir
+                conexões que não são mais usadas.
+            </p>
+
+            <h3>Latência</h3>
         </section>
 
         <section id="aplicacoes">
