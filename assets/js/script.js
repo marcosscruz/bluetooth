@@ -1,13 +1,9 @@
-function redirecionar() {
-    window.location.href = "/assets/html/members.html";  // Caminho para a nova página
-}
-
 function redirecionar_conteudo() {
     window.location.href = "/assets/html/content.html";
 }
 
 function redirecionar_menu_inicial() {
-    window.location.href = "./../../main.html";
+    window.location.href = "./../../index.html";
 }
 
 function ampliarImagem(img) {
