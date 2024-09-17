@@ -21,11 +21,121 @@
     <div id="overlay"></div>
 
     <main>
-        <section>
+        <section id="historico">
             <h2>Histórico</h2>
+            <p>
+                Para começar a falar sobre o Bluetooth, precisamos solucionar algumas questões. Se trata de qual foi a
+                necessidade para criação, por quem foi idealizada, como ela foi batizada com esse nome e quem viabilizou
+                o processo de criação. <br /><br />A idealização partiu de Nils Rydbeck, que trabalhava para Ericsson,
+                em 1899, nesse projeto de rádio de curto alcance almejando conectar dispositivos sem utilizar cabos. Com
+                isso, em 1994 Rydbeck solicitou Jaap Haartsen para tirar essa ideia do papel, e por isso Haartsen é
+                considerado o "pai do Bluetooth". Ambos se dedicaram ao desenvolvimento de um substituto para os cabos
+                RS-232, padrão criado nos anos 1960, no laboratório de pesquisa da empresa, localizado na cidade de
+                Lund, na Suíça.
+            </p>
+            <figure>
+                <img class="imagem-pequena" onclick="ampliarImagem(this)"
+                    src="/assets/img/cabo-rs232-usb-and-RS-232.png" alt="Cabo RS-232">
+                <figcaption>Figura 1: Cabo RS-232.</figcaption>
+            </figure>
+            <p>
+                O nome "Bluetooth" é uma referência ao rei nórdico Harald Gormsson, que unificou a Dinamarca e a Noruega
+                em 958 e era conhecido como "Harald Bluetooth" por causa de um dente escurecido. Jim Kardach, da Intel,
+                sugeriu esse nome para a tecnologia, inspirando-se na unificação promovida pelo rei, já que o objetivo
+                era criar um padrão que conectasse computadores e celulares. Embora fosse para ser temporário, o nome se
+                tornou oficial, e o logotipo da tecnologia é formado por runas que representam as iniciais de Harald.
+            </p>
+            <figure>
+                <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/Harald.jpg" alt="Harald">
+                <figcaption>Figura 2: rei nórdico Harald Gormsson.</figcaption>
+            </figure>
+            <p>
+                Na época, a maioria dos dispositivos eram conectados através de cabos seriais ou USB, e havia também a
+                opção de comunicação com infravermelho, porém necessitava que os dispositivos estivessem alinhados com
+                seus sensores, ao contrário do Bluetooth viria a proporcionar. <br /><br />O que a tecnologia procura
+                solucionar a questão dos cabos com sua conexão por rádio, formando assim uma rede PAN(Personal Area
+                Network) isso se estendendo a dispositivos de diversas fabricantes, incluindo computadores, headsets,
+                teclado, mouses, entre outros dispositivos. <br /><br />A viabilização aconteceu através do consórcio de
+                fabricantes de computadores e eletrônicos, denominado Bluetooth SIG(Special Interest Group). A parceria
+                realizada entre as empresas Ericsson, IBM, Intel, Nokia e Toshiba, mas já contava com 4 mil membros no
+                fim do seu primeiro ano. Atualmente, há mais de 38 mil empresas que participam do grupo, cada uma com um
+                nível de influência.
+            </p>
         </section>
+
+        <section id="dispositivos">
+            <h2>Dispositivos necessários para funcionamento do Bluetooth</h2>
+            <figure>
+                <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/bluetoothconect.png"
+                    alt="Bluetooth conexão">
+                <figcaption>Figura 3: Conexão Bluetooth.</figcaption>
+            </figure>
+            <p>
+                Existem alguns elementos fundamentais para o funcionamento do Bluetooth, como um módulo bluetooth,
+                antena bluetooth, Driver ou software de bluetooth, alimentação, pelo menos 2 dispositivos com todos os
+                componentes citados anteriormente em ambos os aparelhos. <br /><br />O módulo bluetooth é composto pelo:
+            </p>
+            <ul>
+                <li>
+                    <b>Chip Bluetooth</b>, que é basicamente o cérebro que controla as operações de comunicação. Ele
+                    processa sinais digitais, gerencia a transmissão e recepção de dados e executa protocolos de
+                    comunicação.
+                </li>
+                <li>
+                    A <b>antena de radiofrequência</b> permite a transmissão e recepção de ondas de rádio, a qualidade
+                    da antena define o alcance e qualidade da conexão.
+                </li>
+                <li>
+                    <b>Memória Flash</b> que armazena o firmware do módulo, que inclui as instruções para o protocolo
+                    bluetooth.
+                </li>
+                <li>
+                    <b>Interface de comunicação</b> responsável por permitir que o módulo se conecte a outros sistemas
+                    eletrônicos.
+                </li>
+            </ul>
+            <figure>
+                <img class="imagem-pequena" onclick="ampliarImagem(this)"
+                    src="/assets/img/manual-mini-modulo-bluetooth-50-placa-receptor-3.png"
+                    alt="Mini módulo placa receptor Bluetooth 5.0">
+                <figcaption>Figura 4: Mini módulo placa receptor Bluetooth 5.0.</figcaption>
+            </figure>
+            <p>
+                O funcionamento ocorre em quatro passos. <br /><br />A descoberta e emparelhamento, onde quando ativado
+                o bluetooth envia sinais para se tornar visível e disponível para conexão com outros dispositivos.
+                Então, quando dois dispositivos se encontram eles trocam informações(nome do dispositivo, endereço MAC e
+                em alguns casos uma chave para emparelhamento ou senha. <br /><br />Estabelecimento de conexão uma vez
+                emparelhados, os dispositivos podem se conectar novamente caso estejam ligados e dentro do alcance, sem
+                que haja necessidade de realizar a confirmar uma chave de emparelhamento ou senha.
+                <br /><br />Transmissão de Dados é quando o emparelhamento e a conexão já foram realizados e o módulo
+                bluetooth pode transmitir ou receber dados. A depender do perfil bluetooth(A2DP ou SPP(Serial Port
+                Profile)). <br /><br />Manutenção e Finalização da Conexão é quando os dispositivos estão conectados, o
+                módulo Bluetooth continuamente ajusta a força do sinal e o gerenciamento de pacotes de dados para
+                garantir que a conexão permaneça estável. Quando os dispositivos se afastam além do alcance ou a conexão
+                é manualmente encerrada, o link é desfeito, e o módulo retorna ao modo de espera.
+            </p>
+        </section>
+
         <section id="descricao">
             <h2>Descrição detalhada do funcionamento da tecnologia</h2>
+            <p>
+                O sistema Bluetooth é estruturado em <b>piconets</b>, que consistem em um nó mestre e até sete nós
+                escravos
+                ativos dentro de um raio de 10 metros. Várias piconets podem coexistir e ser interconectadas por um nó
+                de ponte, formando uma <b>scatternet</b>. Além dos nós ativos, uma piconet pode ter até 255 nós
+                estacionados,
+                que são dispositivos inativos colocados em estado de baixa energia pelo mestre para economizar bateria.
+                A estrutura mestre/escravo foi projetada para facilitar a produção de chips Bluetooth baratos, com os
+                escravos sendo dispositivos simples que seguem as instruções do mestre. A comunicação é controlada pelo
+                mestre, que define o momento e o dispositivo que se comunica em cada slot de tempo. Não há comunicação
+                direta entre escravos, apenas entre o mestre e os escravos.
+            </p>
+            <figure>
+                <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/arquitetura.JPG"
+                    alt="arquitetura bluetooth">
+                <figcaption>Figura 5: Duas piconets podem ser conectadas para formar uma scatternet.</figcaption>
+            </figure>
+
             <p>O Bluetooth é uma tecnologia de comunicação sem fio projetada para a troca de dados entre dispositivos em
                 curtas distâncias, usando frequências de rádio na banda <b>ISM</b> de <b>2,4 GHz</b>. A arquitetura do
                 Bluetooth não segue rígidamente modelos de rede tradicionais, como OSI ou TCP/IP, mas possui sua própria
@@ -33,7 +143,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/bluetooth-protocol.jpeg"
                     alt="protocolo bluetooth">
-                <figcaption>Figura 1: Versão 802.15 da arquitetura de protocolos do Bluetooth.</figcaption>
+                <figcaption>Figura 6: Versão 802.15 da arquitetura de protocolos do Bluetooth.</figcaption>
             </figure>
         </section>
 
@@ -295,7 +405,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/bluetoothprofile.png"
                     alt="Perfis Bluetooth">
-                <figcaption>Figura X: Perfis Bluetooth.</figcaption>
+                <figcaption>Figura 7: Perfis Bluetooth.</figcaption>
             </figure>
 
             <h3>Segurança</h3>
@@ -309,8 +419,6 @@
                 sejam seus, manter atualizado o sistema operacional de computadores, celulares e tablets, e excluir
                 conexões que não são mais usadas.
             </p>
-
-            <h3>Latência</h3>
         </section>
 
         <section id="aplicacoes">
@@ -406,7 +514,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)"
                     src="/assets/img/androidpit-samsung-galaxy-s8-bluetooth-5_.jpg" alt="bluetooth 5">
-                <figcaption>Figura 2: Bluetooth 5.</figcaption>
+                <figcaption>Figura 8: Bluetooth 5.</figcaption>
             </figure>
         </section>
 
@@ -439,7 +547,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/publicidade-e-digitação.png"
                     alt="Publicidade e Digitação">
-                <figcaption>Figura 3: publicidade e digitação.</figcaption>
+                <figcaption>Figura 9: publicidade e digitação.</figcaption>
             </figure>
 
             <h3>Aprimoramento ISOAL</h3>
@@ -486,7 +594,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)"
                     src="/assets/img/Bluetooth_Core_6_Figure_20.png" alt="ISOAL na arquitetura Bluetooth">
-                <figcaption>Figura 4: ISOAL na arquitetura Bluetooth.</figcaption>
+                <figcaption>Figura 10: ISOAL na arquitetura Bluetooth.</figcaption>
             </figure>
         </section>
 
@@ -528,27 +636,6 @@
             </p>
         </section>
 
-        <section id="arquitetura">
-            <h2>Arquitetura</h2>
-            <p>
-                O sistema Bluetooth é estruturado em <b>piconets</b>, que consistem em um nó mestre e até sete nós
-                escravos
-                ativos dentro de um raio de 10 metros. Várias piconets podem coexistir e ser interconectadas por um nó
-                de ponte, formando uma <b>scatternet</b>. Além dos nós ativos, uma piconet pode ter até 255 nós
-                estacionados,
-                que são dispositivos inativos colocados em estado de baixa energia pelo mestre para economizar bateria.
-                A estrutura mestre/escravo foi projetada para facilitar a produção de chips Bluetooth baratos, com os
-                escravos sendo dispositivos simples que seguem as instruções do mestre. A comunicação é controlada pelo
-                mestre, que define o momento e o dispositivo que se comunica em cada slot de tempo. Não há comunicação
-                direta entre escravos, apenas entre o mestre e os escravos.
-            </p>
-            <figure>
-                <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/arquitetura.JPG"
-                    alt="arquitetura bluetooth">
-                <figcaption>Figura 2: Duas piconets podem ser conectadas para formar uma scatternet.</figcaption>
-            </figure>
-        </section>
-
         <section id="referencias" class="referencias">
             <h2>Referências</h2>
             <ul id="referencias-ul">
@@ -571,6 +658,11 @@
                         target="_blank">SANTOS,
                         V. Bluetooth ou wireless: as diferenças e vantagens para cada dispositivo. Olhar Digital, 5 jul.
                         2023.</a>
+                </li>
+                <li>
+                    <a href="https://tecnoblog.net/responde/o-que-e-bluetooth/#h-como-surgiu-o-bluetooth">Emerson
+                        Alecrim e Ana Marques, Bluetooth: o que é, como funciona e quais são versões da tecnologia?
+                        tecnoblog agosto 2023.</a>
                 </li>
             </ul>
         </section>
