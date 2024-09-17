@@ -14,13 +14,16 @@
     <header class="header-fixo">
         <h1 id="bluetooth-content">Bluetooth</h1>
         <nav class="nav-menu">
-            <img class="symbol-bluetooth" src="/assets/img/bluetooth-svgrepo-com.png" alt="symbol-bluetooth">
+            <img id="symbol-bluetooth" src="/assets/img/bluetooth-svgrepo-com.png" alt="symbol-bluetooth">
         </nav>
     </header>
 
     <div id="overlay"></div>
 
     <main>
+        <section>
+            <h2>Histórico</h2>
+        </section>
         <section id="funcionamento">
             <h2>Bluetooth</h2>
             <p>Bluetooth é uma tecnologia de comunicação sem fio projetada para a troca de dados entre dispositivos em
@@ -28,7 +31,8 @@
                 Bluetooth não segue rígidamente modelos de rede tradicionais, como OSI ou TCP/IP, mas possui sua própria
                 estrutura de camadas de protocolo.</p>
             <figure>
-                <img src="/assets/img/bluetooth_protocol.svg" alt="protocolo bluetooth">
+                <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/bluetooth-protocol.jpeg"
+                    alt="protocolo bluetooth">
                 <figcaption>Figura 1: Versão 802.15 da arquitetura de protocolos do Bluetooth.</figcaption>
             </figure>
         </section>
@@ -167,9 +171,11 @@
         <section id="arquitetura">
             <h2>Arquitetura</h2>
             <p>
-                O sistema Bluetooth é estruturado em piconets, que consistem em um nó mestre e até sete nós escravos
+                O sistema Bluetooth é estruturado em <b>piconets</b>, que consistem em um nó mestre e até sete nós
+                escravos
                 ativos dentro de um raio de 10 metros. Várias piconets podem coexistir e ser interconectadas por um nó
-                de ponte, formando uma scatternet. Além dos nós ativos, uma piconet pode ter até 255 nós estacionados,
+                de ponte, formando uma <b>scatternet</b>. Além dos nós ativos, uma piconet pode ter até 255 nós
+                estacionados,
                 que são dispositivos inativos colocados em estado de baixa energia pelo mestre para economizar bateria.
                 A estrutura mestre/escravo foi projetada para facilitar a produção de chips Bluetooth baratos, com os
                 escravos sendo dispositivos simples que seguem as instruções do mestre. A comunicação é controlada pelo
@@ -177,7 +183,8 @@
                 direta entre escravos, apenas entre o mestre e os escravos.
             </p>
             <figure>
-                <img src="/assets/img/arquitetura.JPG" alt="arquitetura bluetooth">
+                <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/arquitetura.JPG"
+                    alt="arquitetura bluetooth">
                 <figcaption>Figura 2: Duas piconets podem ser conectadas para formar uma scatternet.</figcaption>
             </figure>
         </section>
@@ -266,6 +273,11 @@
         </section>
 
     </main>
+
+    <div id="modal" class="modal" onclick="fecharModal()">
+        <span class="fechar">&times;</span>
+        <img class="modal-conteudo" id="imagem-ampliada">
+    </div>
 
     <script src="/assets/js/script.js"></script>
 

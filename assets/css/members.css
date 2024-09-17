@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+main {
+    margin-top: 5px;
+}
+
 .contato {
     background-color: #f4f4f4;
     padding: 30px;
@@ -61,14 +65,12 @@ body {
 
 .social-links a img {
     width: 25px;
-    /* Controla o tamanho dos ícones */
     height: 25px;
     transition: transform 0.3s ease;
 }
 
 .social-links a img:hover {
     transform: scale(1.3);
-    /* Aumenta o ícone quando passa o mouse */
 }
 
 .membro:hover {
