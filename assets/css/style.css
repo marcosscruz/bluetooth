@@ -207,3 +207,45 @@ footer p {
     margin-top: 40px;
     align-items: center;
 }
+
+.capa {
+    max-width: 1200px;
+    width: 1200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    padding: 20px;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+.capa h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#bluetooth-logo {
+    width: 150px;
+    height: auto;
+    margin-right: 100px;
+}
+
+.integrantes,
+.professor {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+}
+
+.integrantes strong,
+.professor strong {
+    color: #0082FC;
+}
