@@ -216,6 +216,7 @@ figcaption {
 
 footer p {
     background-color: #0082FC;
+    height: 135px;
     color: #ffffff;
     text-align: center;
     padding: 15px;
