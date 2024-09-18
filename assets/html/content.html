@@ -118,6 +118,7 @@
 
         <section id="descricao">
             <h2>Descrição detalhada do funcionamento da tecnologia</h2>
+            <h3>Scatternet</h3>
             <p>
                 O sistema Bluetooth é estruturado em <b>piconets</b>, que consistem em um nó mestre e até sete nós
                 escravos
@@ -136,12 +137,86 @@
                 <figcaption>Figura 5: Duas piconets podem ser conectadas para formar uma scatternet.</figcaption>
             </figure>
 
+            <h3>Quadro de Dados</h3>
+            <p>
+                A comunicação Bluetooth utiliza uma estrutura de quadro de dados que garante a integridade e eficiência
+                da transmissão entre dispositivos. O quadro é dividido em três partes principais, conforme descrito
+                abaixo:
+            </p>
+            <ul>
+                <ol>
+                    <li>
+                        <b>Código de Acesso (Access Code)</b>
+                        <ul>
+                            <li>
+                                Tamanho: 72 bits.
+                            </li>
+                            <li>
+                                Função: Responsável pela identificação do dispositivo Bluetooth na rede, o código de
+                                acesso é utilizado durante a sincronização inicial e detecção de dispositivos. Ele é
+                                essencial para garantir que os dispositivos envolvidos na comunicação pertençam à mesma
+                                rede.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Cabeçalho (Header)</b>
+                        <ul>
+                            <li>
+                                Tamanho: 54 bits.
+                            </li>
+                            <li>
+                                Estrutura: O cabeçalho é repetido três vezes, sendo cada repetição composta por 18 bits.
+                                Esta redundância tem como objetivo aumentar a robustez da comunicação contra erros. As
+                                subdivisões do cabeçalho são detalhadas a seguir:
+
+                                <ul>
+                                    <li><b>Addr (3 bits):</b> Contém o endereço lógico do dispositivo, permitindo a
+                                        identificação do nó Bluetooth na rede.</li>
+                                    <li><b>Type (4 bits):</b> Define o tipo de pacote transmitido, categorizando o
+                                        conteúdo da carga útil.</li>
+                                    <li><b>F (1 bit):</b> Sinalizador de Retransmissão (Retransmission Flag). Indica se
+                                        o pacote deve ser retransmitido, como parte do controle de fluxo.</li>
+                                    <li><b>A (1 bit):</b> Sinalizador de Correção de Erros (Error Correction Flag).
+                                        Identifica se o mecanismo de correção de erros foi aplicado à mensagem.</li>
+                                    <li><b>S (1 bit):</b> Sequência de Pacotes (Packet Sequence Flag). Define a
+                                        sequência dos pacotes, permitindo o reordenamento correto no receptor.</li>
+                                    <li><b>Checksum (8 bits):</b> Campo de verificação de integridade, calculado sobre o
+                                        cabeçalho para detecção de erros durante a transmissão.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Dados (Payload/Data)</b>
+                        <ul>
+                            <li>
+                                Tamanho: Variável, entre 0 e 2744 bits.
+                            </li>
+                            <li>
+                                Função: Este campo contém as informações úteis transmitidas entre os dispositivos
+                                Bluetooth. O tamanho do campo de dados varia conforme o tipo de pacote e a aplicação.
+                                Dependendo do tipo de transmissão, este campo pode conter dados de controle ou dados de
+                                usuário.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </ul>
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/quadro-de-dados.jpeg"
                     alt="Quadro de Dados">
-                <figcaption>Figura 11: Quadro de dados típicos do Bluetooth.</figcaption>
+                <figcaption>Figura 6: Quadro de dados típicos do Bluetooth.</figcaption>
             </figure>
+            <p>
+                A estrutura do quadro de dados Bluetooth foi projetada para maximizar a eficiência na transmissão de
+                dados e assegurar a confiabilidade da comunicação. A divisão clara entre as seções de identificação
+                (Access Code), controle (Header) e dados (Payload) garante um mecanismo robusto, capaz de lidar com
+                retransmissões, correção de erros e sequenciamento de pacotes, mantendo a integridade da comunicação em
+                redes sem fio de curto alcance.
+            </p>
 
+            <h3>Arquitetura de Protocolo</h3>
             <p>O Bluetooth é uma tecnologia de comunicação sem fio projetada para a troca de dados entre dispositivos em
                 curtas distâncias, usando frequências de rádio na banda <b>ISM</b> de <b>2,4 GHz</b>. A arquitetura do
                 Bluetooth não segue rígidamente modelos de rede tradicionais, como OSI ou TCP/IP, mas possui sua própria
@@ -149,7 +224,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/bluetooth-protocol.jpeg"
                     alt="protocolo bluetooth">
-                <figcaption>Figura 6: Versão 802.15 da arquitetura de protocolos do Bluetooth.</figcaption>
+                <figcaption>Figura 7: Versão 802.15 da arquitetura de protocolos do Bluetooth.</figcaption>
             </figure>
         </section>
 
@@ -411,7 +486,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/bluetoothprofile.png"
                     alt="Perfis Bluetooth">
-                <figcaption>Figura 7: Perfis Bluetooth.</figcaption>
+                <figcaption>Figura 8: Perfis Bluetooth.</figcaption>
             </figure>
 
             <h3>Segurança</h3>
@@ -520,7 +595,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)"
                     src="/assets/img/androidpit-samsung-galaxy-s8-bluetooth-5_.jpg" alt="bluetooth 5">
-                <figcaption>Figura 8: Bluetooth 5.</figcaption>
+                <figcaption>Figura 9: Bluetooth 5.</figcaption>
             </figure>
         </section>
 
@@ -553,7 +628,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)" src="/assets/img/publicidade-e-digitação.png"
                     alt="Publicidade e Digitação">
-                <figcaption>Figura 9: publicidade e digitação.</figcaption>
+                <figcaption>Figura 10: publicidade e digitação.</figcaption>
             </figure>
 
             <h3>Aprimoramento ISOAL</h3>
@@ -600,7 +675,7 @@
             <figure>
                 <img class="imagem-pequena" onclick="ampliarImagem(this)"
                     src="/assets/img/Bluetooth_Core_6_Figure_20.png" alt="ISOAL na arquitetura Bluetooth">
-                <figcaption>Figura 10: ISOAL na arquitetura Bluetooth.</figcaption>
+                <figcaption>Figura 11: ISOAL na arquitetura Bluetooth.</figcaption>
             </figure>
         </section>
 
